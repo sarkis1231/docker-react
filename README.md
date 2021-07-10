@@ -10,6 +10,6 @@ You will also see any lint errors in the console.
 
 ### Production
 
-### `docker build . after the build procces gets done please copy the Image_ID`
+### `docker build . after the build proccess gets done please copy the Image_ID`
 ### `docker run --rm -p 8080:80 and <paste the Image_ID>`
 
