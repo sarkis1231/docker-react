@@ -5,7 +5,7 @@ services:
   - docker
 
 before_Install:
-  - docker build -t sarkis1231/ReactApp-docker -f Dockerfile.dev .
+  - docker build -t sarkis1231/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true sarkis1231/ReactApp-docker yarn test
+  - docker run -e CI=true sarkis1231/docker-react yarn test
