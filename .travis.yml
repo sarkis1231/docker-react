@@ -1,0 +1,10 @@
+language: generic 
+sudo: required
+services:
+  - docker
+
+bofore_Install:
+  - docker build -t sarkis1231/ReactApp-docker -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true sarkis1231/ReactApp-docker yarn test
