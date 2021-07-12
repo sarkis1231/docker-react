@@ -4,7 +4,7 @@ sudo: required
 services:
   - docker
 
-bofore_Install:
+before_Install:
   - docker build -t sarkis1231/ReactApp-docker -f Dockerfile.dev .
 
 script:
