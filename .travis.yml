@@ -1,10 +1,9 @@
 language: generic 
 os: linux
-sudo: required
 services:
   - docker
 
-before_Install:
+before_install:
   - docker build -t sarkis1231/docker-react -f Dockerfile.dev .
 
 script:
@@ -15,10 +14,9 @@ deploy:
   region: "us-east-2"
   app: "docker-react"
   env: "Dockerreact-env"
-  bucket_name: "elasticbeanstalk-us-east-2-802665291802"
+  bucket: "elasticbeanstalk-us-east-2-802665291802"
   bucket_path: "docker-react"
-on:
-  branch: master
-env:
-  - access_key_id: $AWS_ACCESS_KEY
-  - secret_access_key: $AWS_SECRET_KEY  
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY 
+  on:
+    branch: master
