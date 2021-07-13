@@ -5,11 +5,11 @@ dist: focal
 services:
   - docker
 
-before_install:
-  - docker build -t sarkis1231/docker-react -f Dockerfile.dev .
+# before_install:
+#   - docker build -t sarkis1231/docker-react -f Dockerfile.dev .
 
-script:
-  - docker run -e CI=true sarkis1231/docker-react yarn test
+# script:
+#   - docker run -e CI=true sarkis1231/docker-react yarn test
 
 before_deploy: "rm docker-compose.yml && ls"
 deploy:
