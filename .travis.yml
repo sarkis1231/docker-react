@@ -10,7 +10,10 @@ before_install:
 
 script:
   - docker run -e CI=true sarkis1231/docker-react yarn test
-
+  - rm docker-compose.yml
+  # to be sure that the docker-compose.yml was deleted successfully
+  - ls
+  
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
