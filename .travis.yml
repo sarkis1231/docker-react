@@ -5,17 +5,19 @@ dist: focal
 services:
   - docker
 
-before_install:
-  - docker build -t sarkis1231/docker-react -f Dockerfile.dev .
+# before_install:
+#   - docker build -t sarkis1231/docker-react -f Dockerfile.dev .
 
-script:
-  - docker run -e CI=true sarkis1231/docker-react yarn test
-  - rm docker-compose.yml
-  # to be sure that the docker-compose.yml was deleted successfully
-  - ls
+# script:
+#   - docker run -e CI=true sarkis1231/docker-react yarn test
+  # - rm docker-compose.yml
+  # # to be sure that the docker-compose.yml was deleted successfully
+  # - ls
 
 deploy:
   provider: elasticbeanstalk
+  script:
+    - echo hello from Deploy stage
   region: "us-east-2"
   app: "test-1"
   env: "Test1-env"
