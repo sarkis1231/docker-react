@@ -11,7 +11,7 @@ before_install:
 script:
   - docker run -e CI=true sarkis1231/docker-react yarn test
 
-before_deploy: "rm docker-compose.yml"
+before_deploy: "rm docker-compose.yml && ls"
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
